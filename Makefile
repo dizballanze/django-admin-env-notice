@@ -27,9 +27,6 @@ clean-pyc: ## remove Python file artifacts
 	find . -name '*.pyo' -exec rm -f {} +
 	find . -name '*~' -exec rm -f {} +
 
-lint: ## check style with flake8
-	flake8 django_admin_env_notice tests
-
 test: ## run tests quickly with the default Python
 	python runtests.py tests
 
@@ -42,14 +39,6 @@ coverage: ## check code coverage quickly with the default Python
 	coverage html
 	open htmlcov/index.html
 
-docs: ## generate Sphinx HTML documentation, including API docs
-	rm -f docs/django-admin-env-notice.rst
-	rm -f docs/modules.rst
-	sphinx-apidoc -o docs/ django_admin_env_notice
-	$(MAKE) -C docs clean
-	$(MAKE) -C docs html
-	$(BROWSER) docs/_build/html/index.html
-
 release: clean ## package and upload a release
 	python setup.py sdist upload
 	python setup.py bdist_wheel upload
@@ -57,3 +46,11 @@ release: clean ## package and upload a release
 sdist: clean ## package
 	python setup.py sdist
 	ls -l dist
+
+pep8:
+	pep8 --exclude=*migrations*,*settings_local.py*,venv/* --max-line-length=119 --show-source django_admin_env_notice tests
+
+pyflakes:
+	pylama --skip=*migrations*,venv/* -l pyflakes django_admin_env_notice tests
+
+lint: pep8 pyflakes
