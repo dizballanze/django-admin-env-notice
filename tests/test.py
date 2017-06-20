@@ -11,7 +11,7 @@ class AdminEnvironmentTestCase(LiveServerTestCase):
         self.client.post('/admin/login/', dict(username=self.superuser.username, password='123123'))
 
     def setUp(self):
-        super().setUp()
+        super(AdminEnvironmentTestCase, self).setUp()
         self.login_user()
 
     def test_show_nothing_if_no_settings(self):
