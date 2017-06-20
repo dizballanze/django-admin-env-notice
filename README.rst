@@ -11,7 +11,7 @@ django-admin-env-notice
 .. image:: https://codecov.io/gh/dizballanze/django-admin-env-notice/branch/master/graph/badge.svg
     :target: https://codecov.io/gh/dizballanze/django-admin-env-notice
 
-Visually distinguish environments in Django Admin
+Visually distinguish environments in Django Admin. Based on great advice from post: `5 ways to make Django Admin safer <https://hackernoon.com/5-ways-to-make-django-admin-safer-eb7753698ac8>`_ by `hakibenita <https://hackernoon.com/@hakibenita>`_.
 
 Requirements
 -----------
