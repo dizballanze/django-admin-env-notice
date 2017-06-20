@@ -13,10 +13,12 @@ django-admin-env-notice
 
 Visually distinguish environments in Django Admin
 
-Documentation
--------------
+Requirements
+-----------
 
-The full documentation is at https://django-admin-env-notice.readthedocs.io.
+- Python 2.7, 3.4+
+- Django 1.9+
+
 
 Quickstart
 ----------
@@ -25,33 +27,32 @@ Install django-admin-env-notice::
 
     pip install django-admin-env-notice
 
-Add it to your `INSTALLED_APPS`:
+Add it to your `INSTALLED_APPS` before `django.contrib.admin`:
 
 .. code-block:: python
 
     INSTALLED_APPS = (
         ...
-        'django_admin_env_notice.apps.DjangoAdminEnvNoticeConfig',
+        'django_admin_env_notice',
+        'django.contrib.admin',
         ...
     )
 
-Add django-admin-env-notice's URL patterns:
+Add context processor:
 
 .. code-block:: python
 
-    from django_admin_env_notice import urls as django_admin_env_notice_urls
-
-
-    urlpatterns = [
-        ...
-        url(r'^', include(django_admin_env_notice_urls)),
-        ...
+    TEMPLATES = [
+        {
+            ...
+            "OPTIONS": {
+                "context_processors": [
+                    ...
+                    "django_admin_env_notice.context_processors.from_settings",
+                ],
+            },
+        },
     ]
-
-Features
---------
-
-* TODO
 
 Running Tests
 -------------
