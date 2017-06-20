@@ -3,6 +3,7 @@ branch = true
 
 [report]
 omit =
+    */apps.py
     *site-packages*
     *tests*
     *.tox*
