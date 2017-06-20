@@ -48,3 +48,5 @@ docs/_build
 
 *.swp
 venv/
+
+.DS_Store
