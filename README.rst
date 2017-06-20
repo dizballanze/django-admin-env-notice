@@ -54,6 +54,20 @@ Add context processor:
         },
     ]
 
+Set label and color for current environment:
+
+.. code-block:: python
+
+    ENVIRONMENT_NAME = "Production server"
+    ENVIRONMENT_COLOR = "#FF2222"
+
+Screenshots
+-----------
+
+.. image:: ./screenshots/prod.png
+.. image:: ./screenshots/dev.png
+.. image:: ./screenshots/testing.png
+
 Running Tests
 -------------
 
