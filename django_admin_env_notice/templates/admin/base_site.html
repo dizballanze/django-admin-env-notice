@@ -3,7 +3,7 @@
 {% if ENVIRONMENT_NAME and ENVIRONMENT_COLOR %}
 <!-- Environment notice -->
 <style type="text/css">
-    body:before {
+    {{ ENVIRONMENT_ADMIN_SELECTOR}}:before {
         display: block;
         line-height: 35px;
         text-align: center;
