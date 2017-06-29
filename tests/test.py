@@ -27,6 +27,25 @@ class AdminEnvironmentTestCase(LiveServerTestCase):
         self.assertContains(response, 'content: "Production server"')
         self.assertContains(response, "background-color: #FF2222")
 
+    @override_settings(
+        ENVIRONMENT_NAME="Production server",
+        ENVIRONMENT_COLOR="#FF2222"
+    )
+    def test_use_body_as_admin_selector_if_no_setting(self):
+        """ Should use body as selector if settings was not provided """
+        response = self.client.get('/admin/')
+        self.assertContains(response, 'body:before {')
+
+    @override_settings(
+        ENVIRONMENT_NAME="Production server",
+        ENVIRONMENT_COLOR="#FF2222",
+        ENVIRONMENT_ADMIN_SELECTOR='.container'
+    )
+    def test_add_admin_selector_code_on_correct_settings(self):
+        """ Should use the selector if settings was provided """
+        response = self.client.get('/admin/')
+        self.assertContains(response, '.container:before {')
+
     @override_settings(ENVIRONMENT_NAME="Production server", ENVIRONMENT_COLOR="#FF2222")
     def test_should_work_on_other_admin_pages(self):
         """ Should include css code to other admin pages as well """
