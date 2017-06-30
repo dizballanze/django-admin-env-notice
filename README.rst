@@ -61,6 +61,12 @@ Set label and color for current environment:
     ENVIRONMENT_NAME = "Production server"
     ENVIRONMENT_COLOR = "#FF2222"
 
+Override django admin selector if necessary (default: body), e.g: grappelli:
+
+.. code-block:: python
+
+    ENVIRONMENT_ADMIN_SELECTOR = "grp-header"
+
 Screenshots
 -----------
 
