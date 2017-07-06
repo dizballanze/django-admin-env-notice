@@ -1,5 +1,5 @@
 {% extends "admin/base_site.html" %}
-{% block extrastyle %}
+{% block extrastyle %}{{ block.super }}
 {% if ENVIRONMENT_NAME and ENVIRONMENT_COLOR %}
 <!-- Environment notice -->
 <style type="text/css">
