@@ -7,4 +7,5 @@ def from_settings(request):
         'ENVIRONMENT_COLOR': getattr(settings, 'ENVIRONMENT_COLOR', None),
         'ENVIRONMENT_ADMIN_SELECTOR': getattr(
             settings, 'ENVIRONMENT_ADMIN_SELECTOR', 'body'),
+        'ENVIRONMENT_FLOAT': getattr(settings, 'ENVIRONMENT_FLOAT', False),
     }
