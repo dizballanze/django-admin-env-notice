@@ -28,6 +28,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.staticfiles",
     "django.contrib.sites",
+    "django.contrib.messages",
 ]
 
 TEMPLATES = [
@@ -54,6 +55,7 @@ SITE_ID = 1
 if django.VERSION >= (1, 10):
     MIDDLEWARE = (
         "django.contrib.sessions.middleware.SessionMiddleware",
+        "django.contrib.messages.middleware.MessageMiddleware",
         "django.middleware.common.CommonMiddleware",
         "django.contrib.auth.middleware.AuthenticationMiddleware",
     )
