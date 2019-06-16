@@ -34,6 +34,7 @@ setup(
     version=version,
     description="""Visually distinguish environments in Django Admin""",
     long_description=get_readme(),
+    long_description_content_type="text/markdown",
     author='Iurii Shikanov',
     author_email='dizballanze@gmail.com',
     url='https://github.com/dizballanze/django-admin-env-notice',
