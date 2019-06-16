@@ -1,4 +1,7 @@
-from django.core.urlresolvers import reverse
+try:
+    from django.core.urlresolvers import reverse
+except ImportError:
+    from django.urls import reverse
 from django.contrib.auth.models import User
 from django.test import LiveServerTestCase, override_settings
 
