@@ -11,18 +11,6 @@ python:
 
 dist: xenial
 
-env:
-  - TOX_ENV=py35-django-19
-  - TOX_ENV=py34-django-19
-  - TOX_ENV=py27-django-19
-  - TOX_ENV=py35-django-110
-  - TOX_ENV=py34-django-110
-  - TOX_ENV=py27-django-110
-
-matrix:
-  fast_finish: true
-
-# command to install dependencies, e.g. pip install -r requirements.txt --use-mirrors
 install: pip install -r requirements_test.txt
 
 script: tox
