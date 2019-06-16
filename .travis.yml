@@ -5,6 +5,8 @@ language: python
 python:
   - "3.5"
 
+dist: xenial
+
 env:
   - TOX_ENV=py35-django-19
   - TOX_ENV=py34-django-19
