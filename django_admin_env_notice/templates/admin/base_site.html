@@ -12,6 +12,11 @@
         color: white;
         content: "{{ ENVIRONMENT_NAME }}";
         background-color: {{ ENVIRONMENT_COLOR }};
+        {% if ENVIRONMENT_FLOAT %}
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        {% endif %}
     }
 </style>
 {% endif %}
