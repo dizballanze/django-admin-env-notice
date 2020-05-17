@@ -70,7 +70,7 @@ Override django admin selector if necessary (default: body), e.g: grappelli:
 
     ENVIRONMENT_ADMIN_SELECTOR = "grp-header"
 
-Optionally, se the environment banner to float over instead of being fixed to the top:
+Optionally, set the environment banner to float over instead of being fixed to the top:
 
 .. code-block:: python
 
