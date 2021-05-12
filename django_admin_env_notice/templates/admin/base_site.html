@@ -2,7 +2,7 @@
 {% block extrastyle %}{{ block.super }}
 {% if ENVIRONMENT_NAME and ENVIRONMENT_COLOR %}
 <!-- Environment notice -->
-<style type="text/css">
+<style type="text/css"{% if request.csp_nonce %} nonce="{{ request.csp_nonce }}"{% endif %}>
     {{ ENVIRONMENT_ADMIN_SELECTOR }}:before {
         display: block;
         line-height: 35px;

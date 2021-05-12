@@ -58,10 +58,12 @@ if django.VERSION >= (1, 10):
         "django.contrib.messages.middleware.MessageMiddleware",
         "django.middleware.common.CommonMiddleware",
         "django.contrib.auth.middleware.AuthenticationMiddleware",
+        "csp.middleware.CSPMiddleware",
     )
 else:
     MIDDLEWARE_CLASSES = (
         "django.contrib.sessions.middleware.SessionMiddleware",
         "django.middleware.common.CommonMiddleware",
         "django.contrib.auth.middleware.AuthenticationMiddleware",
+        "csp.middleware.CSPMiddleware",
     )
