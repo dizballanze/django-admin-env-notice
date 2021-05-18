@@ -68,6 +68,11 @@ Optionally, set the environment banner to float over instead of being fixed to t
 ENVIRONMENT_FLOAT = True
 ```
 
+You can also set the text color (default: white) by setting:
+```python
+ENVIRONMENT_TEXT_COLOR = "#00FF00"
+```
+
 ## Screenshots
 
 ![](./screenshots/prod.png)
