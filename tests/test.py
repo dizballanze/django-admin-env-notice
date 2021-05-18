@@ -82,4 +82,4 @@ class AdminEnvironmentTestCase(LiveServerTestCase):
             raise AssertionError("CSP header does not contain a nonce")
 
         nonce = match.group(1)
-        self.assertContains(response, f'nonce="{nonce}"')
+        self.assertContains(response, 'nonce="%s"' % (nonce,))
