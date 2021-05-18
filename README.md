@@ -1,6 +1,4 @@
-=============================
-django-admin-env-notice
-=============================
+# django-admin-env-notice
 
 [![Package Version](https://badge.fury.io/py/django-admin-env-notice.svg)](https://badge.fury.io/py/django-admin-env-notice)
 [![Build Status](https://travis-ci.org/dizballanze/django-admin-env-notice.svg?branch=master)](https://travis-ci.org/dizballanze/django-admin-env-notice)
@@ -8,15 +6,13 @@ django-admin-env-notice
 
 Visually distinguish environments in Django Admin. Based on great advice from post: [5 ways to make Django Admin safer](https://hackernoon.com/5-ways-to-make-django-admin-safer-eb7753698ac8) by [hakibenita](https://hackernoon.com/@hakibenita).
 
-Requirements
------------
+## Requirements
 
 - Python 2.7, 3.4+
 - Django 1.9+
 
 
-Quickstart
-----------
+## Quickstart
 
 Install django-admin-env-notice::
 
@@ -72,15 +68,13 @@ Optionally, set the environment banner to float over instead of being fixed to t
 ENVIRONMENT_FLOAT = True
 ```
 
-Screenshots
------------
+## Screenshots
 
 ![](./screenshots/prod.png)
 ![](./screenshots/dev.png)
 ![](./screenshots/testing.png)
 
-Running Tests
--------------
+## Running Tests
 
 Does the code actually work?
 
@@ -90,8 +84,7 @@ source <YOURVIRTUALENV>/bin/activate
 (myenv) $ tox
 ```
 
-Credits
--------
+## Credits
 
 Tools used in rendering this package:
 
