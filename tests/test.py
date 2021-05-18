@@ -1,9 +1,14 @@
+import re
+
 try:
     from django.core.urlresolvers import reverse
 except ImportError:
     from django.urls import reverse
 from django.contrib.auth.models import User
 from django.test import LiveServerTestCase, override_settings
+
+
+NONCE_RE = re.compile(r"nonce-([^']+)")
 
 
 class AdminEnvironmentTestCase(LiveServerTestCase):
@@ -61,3 +66,20 @@ class AdminEnvironmentTestCase(LiveServerTestCase):
         for url in urls:
             response = self.client.get(url)
             self.assertContains(response, "<!-- Environment notice -->")
+
+    @override_settings(
+        ENVIRONMENT_NAME="Production server",
+        ENVIRONMENT_COLOR="#FF2222",
+        CSP_INCLUDE_NONCE_IN=["style-src"],
+    )
+    def test_add_nonce_code_on_correct_settings(self):
+        """ Should add correct css code if settings was provided """
+        response = self.client.get("/admin/")
+        csp_header = response["content-security-policy"]
+
+        match = NONCE_RE.search(csp_header)
+        if not match:
+            raise AssertionError("CSP header does not contain a nonce")
+
+        nonce = match.group(1)
+        self.assertContains(response, f'nonce="{nonce}"')
