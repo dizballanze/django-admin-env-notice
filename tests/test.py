@@ -34,6 +34,17 @@ class AdminEnvironmentTestCase(LiveServerTestCase):
         self.assertContains(response, "<!-- Environment notice -->")
         self.assertContains(response, 'content: "Production server"')
         self.assertContains(response, "background-color: #FF2222")
+        self.assertContains(response, "color: white")
+
+    @override_settings(
+        ENVIRONMENT_NAME="Production server",
+        ENVIRONMENT_COLOR="#FF2222",
+        ENVIRONMENT_TEXT_COLOR="#00FF00",
+    )
+    def test_set_text_color(self):
+        """ Should set correct text color if the setting was provided """
+        response = self.client.get("/admin/")
+        self.assertContains(response, "color: #00FF00")
 
     @override_settings(
         ENVIRONMENT_NAME="Production server",
