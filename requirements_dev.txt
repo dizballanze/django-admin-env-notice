@@ -1,5 +1,5 @@
 bumpversion==0.5.3
-wheel==0.29.0
+wheel==0.38.1
 Django>=1.7
 pep8==1.7.0
 pylama==7.0.7
