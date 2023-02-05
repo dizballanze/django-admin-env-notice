@@ -73,6 +73,12 @@ You can also set the text color (default: white) by setting:
 ENVIRONMENT_TEXT_COLOR = "#00FF00"
 ```
 
+You can stop showing the banner to unauthenticated users by setting (default: `True`):
+ 
+```python
+ENVIRONMENT_SHOW_TO_UNAUTHENTICATED = False
+```
+
 ## Screenshots
 
 ![](./screenshots/prod.png)
