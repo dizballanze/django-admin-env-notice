@@ -18,6 +18,12 @@
             z-index: 1000;
         {% endif %}
     }
+    {% if ENVIRONMENT_FLOAT %}
+    body {
+      /* workaround for sticky not sticking on long pages (see https://stackoverflow.com/a/59193260) */
+      height: auto;
+    }
+    {% endif %}
 </style>
 {% endif %}
 {% endblock %}
